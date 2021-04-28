@@ -1,0 +1,1010 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>19-vue-js编程式路由，路由监听和导航守卫 · python_neuedu</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="neuedu">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="20-Vue-js-搭建Vue脚手架（vue-cli）.html" />
+    
+    
+    <link rel="prev" href="18-vue-js路由传参.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.neuedu.com/" target="_blank" class="custom-link">东软睿道</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-初识vue-js.html">
+            
+                <a href="01-初识vue-js.html">
+            
+                    
+                    01-初识vue-js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02-vue-js之文本渲染.html">
+            
+                <a href="02-vue-js之文本渲染.html">
+            
+                    
+                    02-vue-js之文本渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-vue-js之属性绑定.html">
+            
+                <a href="03-vue-js之属性绑定.html">
+            
+                    
+                    03-vue-js之属性绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-vue-js事件处理.html">
+            
+                <a href="04-vue-js事件处理.html">
+            
+                    
+                    04-vue-js事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-vue-js之条件渲染指令.html">
+            
+                <a href="05-vue-js之条件渲染指令.html">
+            
+                    
+                    05-vue-js之条件渲染指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-vue-js之循环指令.html">
+            
+                <a href="06-vue-js之循环指令.html">
+            
+                    
+                    06-vue-js之循环指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07-vue-js方法，计算属性及侦听器.html">
+            
+                <a href="07-vue-js方法，计算属性及侦听器.html">
+            
+                    
+                    07-vue-js方法，计算属性及侦听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08-vue-js表单绑定.html">
+            
+                <a href="08-vue-js表单绑定.html">
+            
+                    
+                    08-vue-js表单绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-vue-js之过滤器.html">
+            
+                <a href="09-vue-js之过滤器.html">
+            
+                    
+                    09-vue-js之过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10-vue-js之自定义指令.html">
+            
+                <a href="10-vue-js之自定义指令.html">
+            
+                    
+                    10-vue-js之自定义指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11-初识vue组件.html">
+            
+                <a href="11-初识vue组件.html">
+            
+                    
+                    11-初识vue组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12-vue-js组件通信基础.html">
+            
+                <a href="12-vue-js组件通信基础.html">
+            
+                    
+                    12-vue-js组件通信基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13-vue-js组件通信进阶.html">
+            
+                <a href="13-vue-js组件通信进阶.html">
+            
+                    
+                    13-vue-js组件通信进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14-vue-js父子组件之间的访问.html">
+            
+                <a href="14-vue-js父子组件之间的访问.html">
+            
+                    
+                    14-vue-js父子组件之间的访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15-vue-js插槽slot.html">
+            
+                <a href="15-vue-js插槽slot.html">
+            
+                    
+                    15-vue-js插槽slot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16-vue-js路由基础.html">
+            
+                <a href="16-vue-js路由基础.html">
+            
+                    
+                    16-vue-js路由基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17-vue-js嵌套路由.html">
+            
+                <a href="17-vue-js嵌套路由.html">
+            
+                    
+                    17-vue-js嵌套路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18-vue-js路由传参.html">
+            
+                <a href="18-vue-js路由传参.html">
+            
+                    
+                    18-vue-js路由传参
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.20" data-path="19-vue-js编程式路由，路由监听和导航守卫.html">
+            
+                <a href="19-vue-js编程式路由，路由监听和导航守卫.html">
+            
+                    
+                    19-vue-js编程式路由，路由监听和导航守卫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20-Vue-js-搭建Vue脚手架（vue-cli）.html">
+            
+                <a href="20-Vue-js-搭建Vue脚手架（vue-cli）.html">
+            
+                    
+                    20-Vue-js-搭建Vue脚手架（vue-cli）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21-vue-cli项目结构及项目运行分析.html">
+            
+                <a href="21-vue-cli项目结构及项目运行分析.html">
+            
+                    
+                    21-vue-cli项目结构及项目运行分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22-使用vue-cli写一个todoList.html">
+            
+                <a href="22-使用vue-cli写一个todoList.html">
+            
+                    
+                    22-使用vue-cli写一个todoList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23-vue之axios.html">
+            
+                <a href="23-vue之axios.html">
+            
+                    
+                    23-vue之axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24-vue-js之vuex.html">
+            
+                <a href="24-vue-js之vuex.html">
+            
+                    
+                    24-vue-js之vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25-vuex之mapState、mapActions、mapGetters.html">
+            
+                <a href="25-vuex之mapState、mapActions、mapGetters.html">
+            
+                    
+                    25-vuex之mapState、mapActions、mapGetters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26-vue-js生命周期解析.html">
+            
+                <a href="26-vue-js生命周期解析.html">
+            
+                    
+                    26-vue-js生命周期解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27-vue-cli项目实战之电影app（一）.html">
+            
+                <a href="27-vue-cli项目实战之电影app（一）.html">
+            
+                    
+                    27-vue-cli项目实战之电影app（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28-vue-cli项目实战之电影app（二）.html">
+            
+                <a href="28-vue-cli项目实战之电影app（二）.html">
+            
+                    
+                    28-vue-cli项目实战之电影app（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >19-vue-js编程式路由，路由监听和导航守卫</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-pagetop-navbar"><ul><ul><li><span class="title-icon "></span><a href="#&#x5229;&#x7528;js&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;"><b>1.1. </b>&#x5229;&#x7528;JS&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;</a></li><li><span class="title-icon "></span><a href="#&#x901A;&#x8FC7;watch&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x76D1;&#x542C;"><b>1.2. </b>&#x901A;&#x8FC7;watch&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x76D1;&#x542C;</a></li><li><span class="title-icon "></span><a href="#&#x5BFC;&#x822A;&#x5B88;&#x536B;"><b>1.3. </b>&#x5BFC;&#x822A;&#x5B88;&#x536B;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x5229;&#x7528;js&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;"><a name="&#x5229;&#x7528;js&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;" class="anchor-navigation-ex-anchor" href="#&#x5229;&#x7528;js&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5229;&#x7528;JS&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;</h2>
+<p>&#x4F7F;&#x7528;this.$router.push&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#xFF0C;this.$router.replace&#x5B9E;&#x73B0;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x3002; &#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4E3A;string&#x7C7B;&#x578B;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x5C06;&#x76F8;&#x5E94;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x3002;</p>
+<p>&#x901A;&#x8FC7;this.$router.go(n)&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x7684;&#x524D;&#x8FDB;&#x540E;&#x9000;&#xFF0C;n&#x8868;&#x793A;&#x8DF3;&#x8F6C;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6B63;&#x6570;&#x8868;&#x793A;&#x524D;&#x8FDB;&#xFF0C;&#x8D1F;&#x6570;&#x8868;&#x793A;&#x540E;&#x9000;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53EA;&#x60F3;&#x5B9E;&#x73B0;&#x524D;&#x8FDB;&#x540E;&#x9000;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;this.$router.forward()&#xFF08;&#x524D;&#x8FDB;&#x4E00;&#x9875;&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;this.$router.back()&#xFF08;&#x540E;&#x9000;&#x4E00;&#x9875;&#xFF09;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">&quot;viewport&quot;</span> content<span class="token operator">=</span><span class="token string">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">&quot;X-UA-Compatible&quot;</span> content<span class="token operator">=</span><span class="token string">&quot;ie=edge&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token punctuation">.</span>nav <span class="token punctuation">{</span>
+      color<span class="token punctuation">:</span> #faa<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>router<span class="token operator">-</span>link<span class="token operator">-</span>active <span class="token punctuation">{</span>
+      color<span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+    &#x8DF3;&#x8F6C;&#x6309;&#x94AE;&#xFF0C;&#x901A;&#x8FC7;<span class="token constant">JS</span>&#x8DF3;&#x8F6C;<span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;links&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x8DF3;&#x8F6C;&#x5230;&#x9996;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn1()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x8DF3;&#x8F6C;&#x5230;&#x65B0;&#x95FB;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn2()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x8DF3;&#x8F6C;&#x5230;&#x7528;&#x6237;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn3()&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x524D;&#x8FDB;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn4()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x524D;&#x8FDB;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn5()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x540E;&#x9000;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn6()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x540E;&#x9000;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn7()&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    &#x4E0B;&#x9762;&#x662F;&#x9875;&#x9762;&#x5185;&#x5BB9;<span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> &#x8DEF;&#x7531;&#x7684;&#x5185;&#x5BB9;&#x663E;&#x793A;&#x5728;router<span class="token operator">-</span>view&#x6807;&#x7B7E;&#x4E2D; <span class="token operator">--</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token comment">// &#x8DEF;&#x7531;&#x8868;</span>
+    <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">&apos;/index/:id&apos;</span><span class="token punctuation">,</span> <span class="token comment">// &#x8DEF;&#x7531;&#x7684;&#x8DEF;&#x5F84;</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span>  <span class="token comment">// &#x8DEF;&#x7531;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x9009;&#x5C5E;&#x6027;&#xFF0C;&#x5B9A;&#x4E49;&#x540E;&#x53EF;&#x4EE5;&#x7528;&#x5176;&#x5B9E;&#x73B0;&#x8DF3;&#x8F6C;</span>
+          component<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// &#x8DEF;&#x7531;&#x663E;&#x793A;&#x7684;&#x7EC4;&#x4EF6;</span>
+            template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x9996;&#x9875;&#xFF1A;{{$route.params.id}}&lt;/div&gt;&apos;</span>  <span class="token comment">// &#x7EC4;&#x4EF6;&#x6A21;&#x677F;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">&apos;/news/:id/&apos;</span><span class="token punctuation">,</span> <span class="token comment">// &#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x4F20;&#x53C2;</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;news&apos;</span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x65B0;&#x95FB;&#xFF1A;{{$route.params.id}}&lt;/div&gt;&apos;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">&apos;/user&apos;</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x7528;&#x6237;&#xFF1A;{{$route.query.userId}}&lt;/div&gt;&apos;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">&apos;#app&apos;</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x5C06;&#x8DEF;&#x7531;&#x6DFB;&#x52A0;&#x5230;Vue&#x4E2D;</span>
+      router<span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x540D;&#x79F0;&#x8DF3;&#x8F6C;&#xFF0C;&#x914D;&#x7F6E;params&#x53C2;&#x6570;&#x3002;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span> params<span class="token punctuation">:</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x8DEF;&#x7531;&#x5730;&#x5740;&#xFF0C;&#x53C2;&#x6570;&#x76F4;&#x63A5;&#x5E26;&#x5728;&#x8DEF;&#x5F84;&#x4E2D;&#x3002;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`/news/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x8DF3;&#x8F6C;&#xFF0C;&#x914D;&#x7F6E;query&#x53C2;&#x6570;&#x3002;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">&apos;/user&apos;</span><span class="token punctuation">,</span> query<span class="token punctuation">:</span> <span class="token punctuation">{</span> userId<span class="token punctuation">:</span> <span class="token number">321</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn5</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn6</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn7</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<h2 id="&#x901A;&#x8FC7;watch&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x76D1;&#x542C;"><a name="&#x901A;&#x8FC7;watch&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x76D1;&#x542C;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x8FC7;watch&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x76D1;&#x542C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x901A;&#x8FC7;watch&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x76D1;&#x542C;</h2>
+<p>&#x901A;&#x8FC7;watch&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x76D1;&#x542C;$route&#x53D8;&#x5316;&#xFF0C;&#x8FBE;&#x5230;&#x76D1;&#x542C;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">watch<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x76D1;&#x542C;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x3002;</span>
+  <span class="token function">$route</span><span class="token punctuation">(</span><span class="token parameter">newRoute<span class="token punctuation">,</span> oldRoute</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;watch&apos;</span><span class="token punctuation">,</span> newRoute<span class="token punctuation">,</span> oldRoute<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<h2 id="&#x5BFC;&#x822A;&#x5B88;&#x536B;"><a name="&#x5BFC;&#x822A;&#x5B88;&#x536B;" class="anchor-navigation-ex-anchor" href="#&#x5BFC;&#x822A;&#x5B88;&#x536B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x5BFC;&#x822A;&#x5B88;&#x536B;</h2>
+<p>&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x524D;&#x505A;&#x4E00;&#x4E9B;&#x9A8C;&#x8BC1;&#xFF0C;&#x6BD4;&#x5982;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#xFF0C;&#x662F;&#x7F51;&#x7AD9;&#x4E2D;&#x7684;&#x666E;&#x904D;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x5BF9;&#x6B64;&#xFF0C;vue-route &#x63D0;&#x4F9B;&#x7684; beforeRouteUpdate &#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x5B9E;&#x73B0;&#x5BFC;&#x822A;&#x5B88;&#x536B;&#xFF08;navigation-guards&#xFF09;&#x3002;</p>
+<p>&#x5BFC;&#x822A;&#x5B88;&#x536B;&#xFF08;navigation-guards&#xFF09;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x542C;&#x8D77;&#x6765;&#x602A;&#x602A;&#x7684;&#xFF0C;&#x4F46;&#x65E2;&#x7136;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x662F;&#x8FD9;&#x6837;&#x7FFB;&#x8BD1;&#x7684;&#xFF0C;&#x5C31;&#x59D1;&#x4E14;&#x8FD9;&#x4E48;&#x53EB;&#x5427;&#x3002;</p>
+<p>&#x8D34;&#x4E0A;&#x6587;&#x6863;&#x5730;&#x5740;&#xFF1A;<a href="https://router.vuejs.org/zh-cn/advanced/navigation-guards.html" target="_blank">https://router.vuejs.org/zh-cn/advanced/navigation-guards.html</a></p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>router.beforeEach</code> &#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x524D;&#x7F6E;&#x5B88;&#x536B;&#xFF1A;</p>
+<pre class="language-"><code>const router = new VueRouter({ ... })
+
+router.beforeEach((to, from, next) =&gt; {
+  // ...
+})
+</code></pre><p>&#x5F53;&#x4E00;&#x4E2A;&#x5BFC;&#x822A;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x5168;&#x5C40;&#x524D;&#x7F6E;&#x5B88;&#x536B;&#x6309;&#x7167;&#x521B;&#x5EFA;&#x987A;&#x5E8F;&#x8C03;&#x7528;&#x3002;&#x5B88;&#x536B;&#x662F;&#x5F02;&#x6B65;&#x89E3;&#x6790;&#x6267;&#x884C;&#xFF0C;&#x6B64;&#x65F6;&#x5BFC;&#x822A;&#x5728;&#x6240;&#x6709;&#x5B88;&#x536B; resolve &#x5B8C;&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x5904;&#x4E8E; &#x7B49;&#x5F85;&#x4E2D;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x5B88;&#x536B;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><p><code>to: Route</code>: &#x5373;&#x5C06;&#x8981;&#x8FDB;&#x5165;&#x7684;&#x76EE;&#x6807; <a href="https://router.vuejs.org/zh-cn/api/route-object.html" target="_blank">&#x8DEF;&#x7531;&#x5BF9;&#x8C61;</a></p>
+</li>
+<li><p><code>from: Route</code>: &#x5F53;&#x524D;&#x5BFC;&#x822A;&#x6B63;&#x8981;&#x79BB;&#x5F00;&#x7684;&#x8DEF;&#x7531;</p>
+</li>
+<li><p><code>next: Function</code>: &#x4E00;&#x5B9A;&#x8981;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x6765; resolve &#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x3002;&#x6267;&#x884C;&#x6548;&#x679C;&#x4F9D;&#x8D56; <code>next</code> &#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x53C2;&#x6570;&#x3002;</p>
+<ul>
+<li><p><code>next()</code>: &#x8FDB;&#x884C;&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x94A9;&#x5B50;&#x3002;&#x5982;&#x679C;&#x5168;&#x90E8;&#x94A9;&#x5B50;&#x6267;&#x884C;&#x5B8C;&#x4E86;&#xFF0C;&#x5219;&#x5BFC;&#x822A;&#x7684;&#x72B6;&#x6001;&#x5C31;&#x662F; confirmed &#xFF08;&#x786E;&#x8BA4;&#x7684;&#xFF09;&#x3002;</p>
+</li>
+<li><p><code>next(false)</code>: &#x4E2D;&#x65AD;&#x5F53;&#x524D;&#x7684;&#x5BFC;&#x822A;&#x3002;&#x5982;&#x679C;&#x6D4F;&#x89C8;&#x5668;&#x7684; URL &#x6539;&#x53D8;&#x4E86;&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x7528;&#x6237;&#x624B;&#x52A8;&#x6216;&#x8005;&#x6D4F;&#x89C8;&#x5668;&#x540E;&#x9000;&#x6309;&#x94AE;&#xFF09;&#xFF0C;&#x90A3;&#x4E48; URL &#x5730;&#x5740;&#x4F1A;&#x91CD;&#x7F6E;&#x5230; <code>from</code> &#x8DEF;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+</li>
+<li><p><code>next(&apos;/&apos;)</code> &#x6216;&#x8005; <code>next({ path: &apos;/&apos; })</code>: &#x8DF3;&#x8F6C;&#x5230;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x5740;&#x3002;&#x5F53;&#x524D;&#x7684;&#x5BFC;&#x822A;&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BFC;&#x822A;&#x3002;</p>
+</li>
+<li><p><code>next(error)</code>: (2.4.0+) &#x5982;&#x679C;&#x4F20;&#x5165; <code>next</code> &#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A; <code>Error</code> &#x5B9E;&#x4F8B;&#xFF0C;&#x5219;&#x5BFC;&#x822A;&#x4F1A;&#x88AB;&#x7EC8;&#x6B62;&#x4E14;&#x8BE5;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;&#x4F20;&#x9012;&#x7ED9; <code>router.onError()</code> &#x6CE8;&#x518C;&#x8FC7;&#x7684;&#x56DE;&#x8C03;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x786E;&#x4FDD;&#x8981;&#x8C03;&#x7528; <code>next</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5426;&#x5219;&#x94A9;&#x5B50;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB; resolved&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x5199;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<ol>
+<li>&#x5217;&#x4E3E;&#x9700;&#x8981;&#x5224;&#x65AD;&#x767B;&#x5F55;&#x72B6;&#x6001;&#x7684;&#x201C;&#x8DEF;&#x7531;&#x96C6;&#x5408;&#x201D;&#xFF0C;&#x5F53;&#x8DF3;&#x8F6C;&#x81F3;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x8DEF;&#x7531;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x201C;&#x672A;&#x767B;&#x5F55;&#x72B6;&#x6001;&#x201D;&#xFF0C;&#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x767B;&#x5F55;&#x9875;&#x9762;LoginPage&#xFF1B;</li>
+<li>&#x5F53;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x767B;&#x5F55;&#x9875;&#x9762;LoginPage&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x201C;&#x5DF2;&#x767B;&#x5F55;&#x72B6;&#x6001;&#x201D;&#xFF0C;&#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x9996;&#x9875;HomePage&#xFF1B;</li>
+</ol>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+           <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> &#x4F7F;&#x7528; router<span class="token operator">-</span>link &#x7EC4;&#x4EF6;&#x6765;&#x5BFC;&#x822A;<span class="token punctuation">.</span> <span class="token operator">--</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> &#x901A;&#x8FC7;&#x4F20;&#x5165; <span class="token template-string"><span class="token string">`to`</span></span> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x94FE;&#x63A5;<span class="token punctuation">.</span> <span class="token operator">--</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>router<span class="token operator">-</span>link<span class="token operator">&gt;</span> &#x9ED8;&#x8BA4;&#x4F1A;&#x88AB;&#x6E32;&#x67D3;&#x6210;&#x4E00;&#x4E2A; <span class="token template-string"><span class="token string">`&lt;a&gt;`</span></span> &#x6807;&#x7B7E; <span class="token operator">--</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">&quot;/home&quot;</span><span class="token operator">&gt;</span>home<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">&quot;/news&quot;</span><span class="token operator">&gt;</span>news<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">&quot;/music&quot;</span><span class="token operator">&gt;</span>music<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">&quot;/login&quot;</span><span class="token operator">&gt;</span>login<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> &#x8DEF;&#x7531;&#x51FA;&#x53E3; <span class="token operator">--</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> &#x8DEF;&#x7531;&#x5339;&#x914D;&#x5230;&#x7684;&#x7EC4;&#x4EF6;&#x5C06;&#x6E32;&#x67D3;&#x5728;&#x8FD9;&#x91CC; <span class="token operator">--</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">&quot;text/javascript&quot;</span><span class="token operator">&gt;</span>
+        <span class="token comment">// 1. &#x5B9A;&#x4E49;&#xFF08;&#x8DEF;&#x7531;&#xFF09;&#x7EC4;&#x4EF6;&#x3002;</span>
+        <span class="token keyword">const</span> Home <span class="token operator">=</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x9996;&#x9875;&lt;/div&gt;&apos;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">const</span> News <span class="token operator">=</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x65B0;&#x95FB;&lt;/div&gt;&apos;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">const</span> Music <span class="token operator">=</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x97F3;&#x4E50;&lt;/div&gt;&apos;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">const</span> Login <span class="token operator">=</span> <span class="token punctuation">{</span> template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x767B;&#x5F55;&lt;/div&gt;&apos;</span> <span class="token punctuation">}</span>
+
+        <span class="token comment">// 2. &#x5B9A;&#x4E49;&#x8DEF;&#x7531;</span>
+        <span class="token comment">// &#x6BCF;&#x4E2A;&#x8DEF;&#x7531;&#x5E94;&#x8BE5;&#x6620;&#x5C04;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;</span>
+        <span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">&apos;/home&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span><span class="token string">&apos;home&apos;</span><span class="token punctuation">,</span>component<span class="token punctuation">:</span> Home <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">&apos;/news&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span><span class="token string">&apos;news&apos;</span><span class="token punctuation">,</span>component<span class="token punctuation">:</span> News <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">&apos;/music&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span><span class="token string">&apos;music&apos;</span><span class="token punctuation">,</span>component<span class="token punctuation">:</span> Music <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">&apos;/login&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span><span class="token string">&apos;login&apos;</span><span class="token punctuation">,</span>component<span class="token punctuation">:</span> Login <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+
+
+        <span class="token comment">// 3. &#x521B;&#x5EFA; router &#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x4F20; `routes` &#x914D;&#x7F6E;</span>
+        <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          routes <span class="token comment">// &#xFF08;&#x7F29;&#x5199;&#xFF09;&#x76F8;&#x5F53;&#x4E8E; routes: routes</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token comment">// 4. &#x521B;&#x5EFA;&#x548C;&#x6302;&#x8F7D;&#x6839;&#x5B9E;&#x4F8B;&#x3002;</span>
+        <span class="token comment">// &#x8BB0;&#x5F97;&#x8981;&#x901A;&#x8FC7; router &#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6CE8;&#x5165;&#x8DEF;&#x7531;&#xFF0C;</span>
+        <span class="token comment">// &#x4ECE;&#x800C;&#x8BA9;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x90FD;&#x6709;&#x8DEF;&#x7531;&#x529F;&#x80FD;</span>
+        <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          el<span class="token punctuation">:</span> <span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+          data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment">// &#x5C06;&#x8DEF;&#x7531;&#x6DFB;&#x52A0;&#x5230;Vue&#x4E2D;</span>
+          router
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+                <span class="token comment">// &#x5168;&#x5C40;&#x8DEF;&#x7531;&#x5B88;&#x536B;</span>
+        router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;navigation-guards&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment">// to: Route: &#x5373;&#x5C06;&#x8981;&#x8FDB;&#x5165;&#x7684;&#x76EE;&#x6807; &#x8DEF;&#x7531;&#x5BF9;&#x8C61;</span>
+          <span class="token comment">// from: Route: &#x5F53;&#x524D;&#x5BFC;&#x822A;&#x6B63;&#x8981;&#x79BB;&#x5F00;&#x7684;&#x8DEF;&#x7531;</span>
+          <span class="token comment">// next: Function: &#x4E00;&#x5B9A;&#x8981;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x6765; resolve &#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x3002;&#x6267;&#x884C;&#x6548;&#x679C;&#x4F9D;&#x8D56; next &#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x53C2;&#x6570;&#x3002;</span>
+
+          <span class="token keyword">const</span> nextRoute <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;news&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;music&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token keyword">let</span> isLogin <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>  <span class="token comment">// &#x662F;&#x5426;&#x767B;&#x5F55;</span>
+          <span class="token comment">// &#x672A;&#x767B;&#x5F55;&#x72B6;&#x6001;&#xFF1B;&#x5F53;&#x8DEF;&#x7531;&#x5230;nextRoute&#x6307;&#x5B9A;&#x9875;&#x65F6;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;login</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>nextRoute<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isLogin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;what fuck&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;login&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+              location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          <span class="token comment">// &#x5DF2;&#x767B;&#x5F55;&#x72B6;&#x6001;&#xFF1B;&#x5F53;&#x8DEF;&#x7531;&#x5230;login&#x65F6;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;home</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">&apos;login&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>isLogin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;home&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x73B0;&#x5728;&#xFF0C;&#x5E94;&#x7528;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x4E86;&#xFF01;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p>vue-router&#x652F;&#x6301;3&#x79CD;&#x8DEF;&#x7531;&#x5B88;&#x536B;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B88;&#x536B;&#x53C2;&#x6570;&#x4E2D;&#x7684;next&#x65B9;&#x6CD5;&#x90FD;&#x5FC5;&#x987B;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x4F1A;&#x963B;&#x6B62;&#x8DEF;&#x7531;&#x7684;&#x8DF3;&#x8F6C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;next&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x53C2;&#x6570;string | object&#xFF0C;&#x5C06;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x5230;&#x4E0D;&#x540C;&#x5730;&#x5740;&#x3002;</p>
+<ol>
+<li>&#x5168;&#x5C40;&#x5B88;&#x536B; router.beforeEach((to, from, next) =&gt; {})
+ router.beforeResolve((to, from, next) =&gt; {})
+ router.afterEach((to, from) =&gt; {})</li>
+<li>&#x8DEF;&#x7531;&#x5B88;&#x536B; beforeEnter(to, from, next) {}</li>
+<li>&#x7EC4;&#x4EF6;&#x5185;&#x5B88;&#x536B; beforeRouteEnter(to, from, next) {}
+ beforeRouteUpdate(to, from, next) {}
+ beforeRouteLeave(to, from, next) {}</li>
+</ol>
+<p>&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65F6;&#x5B88;&#x536B;&#x7684;&#x8FD0;&#x884C;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x8DEF;&#x7531; beforeEach =&gt; beforeEnter =&gt; beforeRouteEnter =&gt; beforeResolve =&gt;  afterEach</li>
+<li>&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x4E0B;&#x8DF3;&#x8F6C;&#xFF0C;&#x5982;&#x66FF;&#x6362;&#x8DEF;&#x7531;&#x53C2;&#x6570; beforeEach =&gt; beforeRouteUpdate =&gt; beforeResolve =&gt; afterEach</li>
+<li>&#x79BB;&#x5F00;&#x5F53;&#x524D;&#x8DEF;&#x7531; beforeRouteLeave =&gt; beforeEach =&gt; beforeResolve =&gt; afterEach</li>
+</ol>
+<p>&#x5F00;&#x53D1;&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x5B88;&#x536B;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">&quot;viewport&quot;</span> content<span class="token operator">=</span><span class="token string">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>meta http<span class="token operator">-</span>equiv<span class="token operator">=</span><span class="token string">&quot;X-UA-Compatible&quot;</span> content<span class="token operator">=</span><span class="token string">&quot;ie=edge&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token punctuation">.</span>nav <span class="token punctuation">{</span>
+      color<span class="token punctuation">:</span> #faa<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>router<span class="token operator">-</span>link<span class="token operator">-</span>active <span class="token punctuation">{</span>
+      color<span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+    &#x8DF3;&#x8F6C;&#x6309;&#x94AE;&#xFF0C;&#x901A;&#x8FC7;<span class="token constant">JS</span>&#x8DF3;&#x8F6C;<span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;links&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x8DF3;&#x8F6C;&#x5230;&#x9996;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn1()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x8DF3;&#x8F6C;&#x5230;&#x65B0;&#x95FB;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn2()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x8DF3;&#x8F6C;&#x5230;&#x7528;&#x6237;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn3()&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x524D;&#x8FDB;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn4()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x524D;&#x8FDB;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn5()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x540E;&#x9000;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn6()&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span> value<span class="token operator">=</span><span class="token string">&quot;&#x540E;&#x9000;&#x4E00;&#x9875;&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;fn7()&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    &#x4E0B;&#x9762;&#x662F;&#x9875;&#x9762;&#x5185;&#x5BB9;<span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> &#x8DEF;&#x7531;&#x7684;&#x5185;&#x5BB9;&#x663E;&#x793A;&#x5728;router<span class="token operator">-</span>view&#x6807;&#x7B7E;&#x4E2D; <span class="token operator">--</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token comment">// &#x8DEF;&#x7531;&#x8868;</span>
+    <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">&apos;/index/:id&apos;</span><span class="token punctuation">,</span> <span class="token comment">// &#x8DEF;&#x7531;&#x7684;&#x8DEF;&#x5F84;</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span>  <span class="token comment">// &#x8DEF;&#x7531;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x9009;&#x5C5E;&#x6027;&#xFF0C;&#x5B9A;&#x4E49;&#x540E;&#x53EF;&#x4EE5;&#x7528;&#x5176;&#x5B9E;&#x73B0;&#x8DF3;&#x8F6C;</span>
+          component<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// &#x8DEF;&#x7531;&#x663E;&#x793A;&#x7684;&#x7EC4;&#x4EF6;</span>
+            template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x9996;&#x9875;&#xFF1A;{{$route.params.id}}&lt;/div&gt;&apos;</span>  <span class="token comment">// &#x7EC4;&#x4EF6;&#x6A21;&#x677F;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">&apos;/news/:id/&apos;</span><span class="token punctuation">,</span> <span class="token comment">// &#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x4F20;&#x53C2;</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;news&apos;</span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x65B0;&#x95FB;&#xFF1A;{{$route.params.id}}&lt;/div&gt;&apos;</span><span class="token punctuation">,</span>
+            <span class="token function">beforeRouteEnter</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;beforeRouteEnter&apos;</span><span class="token punctuation">)</span>
+              <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">beforeRouteUpdate</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;beforeRouteUpdate&apos;</span><span class="token punctuation">)</span>
+              <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">beforeRouteLeave</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;beforeRouteLeave&apos;</span><span class="token punctuation">)</span>
+              <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token function">beforeEnter</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;beforeEnter&apos;</span><span class="token punctuation">)</span>
+            <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token string">&apos;/user&apos;</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span> <span class="token string">&apos;&lt;div&gt;&#x7528;&#x6237;&#xFF1A;{{$route.query.userId}}&lt;/div&gt;&apos;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router
+      <span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;beforeEach&apos;</span><span class="token punctuation">)</span>
+        <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router
+      <span class="token punctuation">.</span><span class="token function">beforeResolve</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;beforeResolve&apos;</span><span class="token punctuation">)</span>
+        <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router
+      <span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;afterEach&apos;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">&apos;#app&apos;</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x5C06;&#x8DEF;&#x7531;&#x6DFB;&#x52A0;&#x5230;Vue&#x4E2D;</span>
+      router<span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x540D;&#x79F0;&#x8DF3;&#x8F6C;&#xFF0C;&#x914D;&#x7F6E;params&#x53C2;&#x6570;&#x3002;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span> params<span class="token punctuation">:</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x8DEF;&#x7531;&#x5730;&#x5740;&#xFF0C;&#x53C2;&#x6570;&#x76F4;&#x63A5;&#x5E26;&#x5728;&#x8DEF;&#x5F84;&#x4E2D;&#x3002;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`/news/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x8DF3;&#x8F6C;&#xFF0C;&#x914D;&#x7F6E;query&#x53C2;&#x6570;&#x3002;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">&apos;/user&apos;</span><span class="token punctuation">,</span> query<span class="token punctuation">:</span> <span class="token punctuation">{</span> userId<span class="token punctuation">:</span> <span class="token number">321</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn5</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn6</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">go</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">fn7</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      watch<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x76D1;&#x542C;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x3002;</span>
+        <span class="token function">$route</span><span class="token punctuation">(</span><span class="token parameter">newRoute<span class="token punctuation">,</span> oldRoute</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;watch&apos;</span><span class="token punctuation">,</span> newRoute<span class="token punctuation">,</span> oldRoute<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="18-vue-js路由传参.html" class="navigation navigation-prev " aria-label="Previous page: 18-vue-js路由传参">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="20-Vue-js-搭建Vue脚手架（vue-cli）.html" class="navigation navigation-next " aria-label="Next page: 20-Vue-js-搭建Vue脚手架（vue-cli）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"19-vue-js编程式路由，路由监听和导航守卫","level":"1.20","depth":1,"next":{"title":"20-Vue-js-搭建Vue脚手架（vue-cli）","level":"1.21","depth":1,"path":"20-Vue-js-搭建Vue脚手架（vue-cli）.md","ref":"20-Vue-js-搭建Vue脚手架（vue-cli）.md","articles":[]},"previous":{"title":"18-vue-js路由传参","level":"1.19","depth":1,"path":"18-vue-js路由传参.md","ref":"18-vue-js路由传参.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"pageTop","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"serif","size":2},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false}},"theme":"default","author":"neuedu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_neuedu","language":"zh-hans","links":{"sidebar":{"东软睿道":"http://www.neuedu.com/"}},"gitbook":"3.2.3","description":"http://www.neuedu.com/"},"file":{"path":"19-vue-js编程式路由，路由监听和导航守卫.md","mtime":"2019-06-10T07:37:16.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-10T07:37:19.913Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

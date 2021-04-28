@@ -1,0 +1,846 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>11-初识vue组件 · python_neuedu</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="neuedu">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="12-vue-js组件通信基础.html" />
+    
+    
+    <link rel="prev" href="10-vue-js之自定义指令.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.neuedu.com/" target="_blank" class="custom-link">东软睿道</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-初识vue-js.html">
+            
+                <a href="01-初识vue-js.html">
+            
+                    
+                    01-初识vue-js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02-vue-js之文本渲染.html">
+            
+                <a href="02-vue-js之文本渲染.html">
+            
+                    
+                    02-vue-js之文本渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-vue-js之属性绑定.html">
+            
+                <a href="03-vue-js之属性绑定.html">
+            
+                    
+                    03-vue-js之属性绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-vue-js事件处理.html">
+            
+                <a href="04-vue-js事件处理.html">
+            
+                    
+                    04-vue-js事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-vue-js之条件渲染指令.html">
+            
+                <a href="05-vue-js之条件渲染指令.html">
+            
+                    
+                    05-vue-js之条件渲染指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-vue-js之循环指令.html">
+            
+                <a href="06-vue-js之循环指令.html">
+            
+                    
+                    06-vue-js之循环指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07-vue-js方法，计算属性及侦听器.html">
+            
+                <a href="07-vue-js方法，计算属性及侦听器.html">
+            
+                    
+                    07-vue-js方法，计算属性及侦听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08-vue-js表单绑定.html">
+            
+                <a href="08-vue-js表单绑定.html">
+            
+                    
+                    08-vue-js表单绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-vue-js之过滤器.html">
+            
+                <a href="09-vue-js之过滤器.html">
+            
+                    
+                    09-vue-js之过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10-vue-js之自定义指令.html">
+            
+                <a href="10-vue-js之自定义指令.html">
+            
+                    
+                    10-vue-js之自定义指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="11-初识vue组件.html">
+            
+                <a href="11-初识vue组件.html">
+            
+                    
+                    11-初识vue组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12-vue-js组件通信基础.html">
+            
+                <a href="12-vue-js组件通信基础.html">
+            
+                    
+                    12-vue-js组件通信基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13-vue-js组件通信进阶.html">
+            
+                <a href="13-vue-js组件通信进阶.html">
+            
+                    
+                    13-vue-js组件通信进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14-vue-js父子组件之间的访问.html">
+            
+                <a href="14-vue-js父子组件之间的访问.html">
+            
+                    
+                    14-vue-js父子组件之间的访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15-vue-js插槽slot.html">
+            
+                <a href="15-vue-js插槽slot.html">
+            
+                    
+                    15-vue-js插槽slot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16-vue-js路由基础.html">
+            
+                <a href="16-vue-js路由基础.html">
+            
+                    
+                    16-vue-js路由基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17-vue-js嵌套路由.html">
+            
+                <a href="17-vue-js嵌套路由.html">
+            
+                    
+                    17-vue-js嵌套路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18-vue-js路由传参.html">
+            
+                <a href="18-vue-js路由传参.html">
+            
+                    
+                    18-vue-js路由传参
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19-vue-js编程式路由，路由监听和导航守卫.html">
+            
+                <a href="19-vue-js编程式路由，路由监听和导航守卫.html">
+            
+                    
+                    19-vue-js编程式路由，路由监听和导航守卫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20-Vue-js-搭建Vue脚手架（vue-cli）.html">
+            
+                <a href="20-Vue-js-搭建Vue脚手架（vue-cli）.html">
+            
+                    
+                    20-Vue-js-搭建Vue脚手架（vue-cli）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21-vue-cli项目结构及项目运行分析.html">
+            
+                <a href="21-vue-cli项目结构及项目运行分析.html">
+            
+                    
+                    21-vue-cli项目结构及项目运行分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22-使用vue-cli写一个todoList.html">
+            
+                <a href="22-使用vue-cli写一个todoList.html">
+            
+                    
+                    22-使用vue-cli写一个todoList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23-vue之axios.html">
+            
+                <a href="23-vue之axios.html">
+            
+                    
+                    23-vue之axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24-vue-js之vuex.html">
+            
+                <a href="24-vue-js之vuex.html">
+            
+                    
+                    24-vue-js之vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25-vuex之mapState、mapActions、mapGetters.html">
+            
+                <a href="25-vuex之mapState、mapActions、mapGetters.html">
+            
+                    
+                    25-vuex之mapState、mapActions、mapGetters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26-vue-js生命周期解析.html">
+            
+                <a href="26-vue-js生命周期解析.html">
+            
+                    
+                    26-vue-js生命周期解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27-vue-cli项目实战之电影app（一）.html">
+            
+                <a href="27-vue-cli项目实战之电影app（一）.html">
+            
+                    
+                    27-vue-cli项目实战之电影app（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28-vue-cli项目实战之电影app（二）.html">
+            
+                <a href="28-vue-cli项目实战之电影app（二）.html">
+            
+                    
+                    28-vue-cli项目实战之电影app（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >11-初识vue组件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-pagetop-navbar"><ul><ul><li><span class="title-icon "></span><a href="#&#x5168;&#x5C40;&#x7EC4;&#x4EF6;"><b>1.1. </b>&#x5168;&#x5C40;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;"><b>1.2. </b>&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x7EC4;&#x4EF6;&#x6A21;&#x677F;"><b>1.3. </b>&#x7EC4;&#x4EF6;&#x6A21;&#x677F;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x5728;vue&#x4E2D;&#xFF0C;&#x7EC4;&#x4EF6;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#x7EC4;&#x5408;&#x90E8;&#x5206;&#xFF0C;&#x5B98;&#x65B9;&#x4E2D;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x4E3A;&#x53EF;&#x590D;&#x7528;&#x7684;vue&#x5B9E;&#x4F8B;&#xFF0C;&#x5206;&#x4E3A;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&#x548C;&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x6765;&#x5206;&#x522B;&#x6F14;&#x793A;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h2 id="&#x5168;&#x5C40;&#x7EC4;&#x4EF6;"><a name="&#x5168;&#x5C40;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5168;&#x5C40;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5168;&#x5C40;&#x7EC4;&#x4EF6;</h2>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span class="token constant">VUE</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;bower_components/vue/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>aaa<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>aaa<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> Aaa<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span><span class="token string">&apos;&lt;h3&gt;&#x6211;&#x662F;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&lt;/h3&gt;&apos;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">&apos;aaa&apos;</span><span class="token punctuation">,</span>Aaa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">var</span> vm<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">:</span><span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-83fa6c4eac69159b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x603B;&#x7ED3;&#x51FA;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x8C03;&#x7528;vue.extend()&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x8BE5;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#x7684;template&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x8981;&#x6E32;&#x67D3;&#x7684;HTML</li>
+<li>&#x4F7F;&#x7528;vue.component()&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;2&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x7EC4;&#x4EF6;&#x7684;&#x6807;&#x7B7E;&#x548C;&#x7EC4;&#x4EF6;&#x6784;&#x9020;&#x5668;&#x3002;vue.component()&#x5185;&#x90E8;&#x4F1A;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</li>
+<li>&#x5C06;&#x7EC4;&#x5EFA;&#x6302;&#x8F7D;&#x5230;&#x67D0;&#x4E2A;vue&#x5B9E;&#x4F8B;&#x4E0B;&#x3002;</li>
+</ul>
+<p>&#x56E0;&#x4E3A;&#x7EC4;&#x4EF6;&#x662F;&#x53EF;&#x590D;&#x7528;&#x7684;vue&#x5B9E;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x4E5F;&#x80FD;&#x63A5;&#x6536;data&#x3001;computed&#x3001;watch&#x3001;methods&#x4EE5;&#x53CA;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x7B49;&#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>vue<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;bower_components/vue/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>aaa<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>aaa<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> Aaa<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                msg<span class="token punctuation">:</span><span class="token string">&apos;&#x6211;&#x662F;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&apos;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            template<span class="token punctuation">:</span><span class="token string">&apos;&lt;h3&gt;{{msg}}&lt;/h3&gt;&apos;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">&apos;aaa&apos;</span><span class="token punctuation">,</span>Aaa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token keyword">var</span> vm<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">:</span><span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+            data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                bSign<span class="token punctuation">:</span><span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-4cd6eeda1a718c85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x50CF;&#x5F80;&#x5E38;&#x4E00;&#x6837;&#x4F7F;&#x7528;data&#x9009;&#x9879;&#x65F6;&#xFF0C;&#x53D1;&#x73B0;&#x7ED3;&#x679C;&#x5E76;&#x4E0D;&#x662F;&#x9884;&#x671F;&#x4E2D;&#x90A3;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4E00;<strong>&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;data&#x9009;&#x9879;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</strong>&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>vue<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;bower_components/vue/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>aaa<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>aaa<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> Aaa<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                    msg<span class="token punctuation">:</span><span class="token string">&apos;&#x6211;&#x662F;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&apos;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token operator">=</span><span class="token string">&apos;changed&apos;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            template<span class="token punctuation">:</span><span class="token string">&apos;&lt;h3 @click=&quot;change&quot;&gt;{{msg}}&lt;/h3&gt;&apos;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">&apos;aaa&apos;</span><span class="token punctuation">,</span>Aaa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">var</span> vm<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">:</span><span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+            data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                bSign<span class="token punctuation">:</span><span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-947709b81617a208.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-53e047a01763cc0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;"><a name="&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5C40;&#x90E8;&#x7EC4;&#x4EF6;</h2>
+<p><strong>&#x8C03;&#x7528;Vue.component()&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x7EC4;&#x4EF6;&#x7684;&#x6CE8;&#x518C;&#x662F;&#x5168;&#x5C40;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8BE5;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;Vue&#x793A;&#x4F8B;&#x4E0B;&#x4F7F;&#x7528;&#x3002;</strong>
+&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x5168;&#x5C40;&#x6CE8;&#x518C;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x8BA9;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x5728;&#x5176;&#x5B83;&#x7EC4;&#x4EF6;&#x5185;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;<strong>&#x9009;&#x9879;&#x5BF9;&#x8C61;&#x7684;components&#x5C5E;&#x6027;&#x5B9E;&#x73B0;&#x5C40;&#x90E8;&#x6CE8;&#x518C;</strong>&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&#x6539;&#x4E3A;&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>vue<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;bower_components/vue/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>aaa<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>aaa<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> Aaa<span class="token operator">=</span>Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span><span class="token string">&apos;&lt;h3&gt;{{msg}}&lt;/h3&gt;&apos;</span><span class="token punctuation">,</span>
+            <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                    msg<span class="token punctuation">:</span><span class="token string">&apos;&#x6211;&#x662F;&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;&apos;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> vm<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">:</span><span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+            data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                bSign<span class="token punctuation">:</span><span class="token boolean">true</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            components<span class="token punctuation">:</span><span class="token punctuation">{</span> <span class="token comment">//&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;</span>
+                aaa<span class="token punctuation">:</span>Aaa
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-fc3f8bddfd13e2e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>&#x867D;&#x7136;&#x4E0A;&#x9762;&#x7684;&#x7EC4;&#x4EF6;&#x662F;&#x5728;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x7684;vue&#x5B9E;&#x4F8B;&#x4E0B;&#x6CE8;&#x518C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x7EC4;&#x4EF6;&#x6784;&#x9020;&#x5668;&#x8FD8;&#x662F;&#x5168;&#x5C40;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E76;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x7EC4;&#x4EF6;&#x624D;&#x662F;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>vue<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;bower_components/vue/dist/vue.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>my<span class="token operator">-</span>aaa<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>my<span class="token operator">-</span>aaa<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> vm<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">:</span><span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+            components<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                <span class="token string">&apos;my-aaa&apos;</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+                    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                            msg<span class="token punctuation">:</span><span class="token string">&apos;welcome vue&apos;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                        <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token operator">=</span><span class="token string">&apos;changed&apos;</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    template<span class="token punctuation">:</span><span class="token string">&apos;&lt;h2 @click=&quot;change&quot;&gt;&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;--&gt;{{msg}}&lt;/h2&gt;&apos;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-cf5e778d9b0db7ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-bda7116bebfd65b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="&#x7EC4;&#x4EF6;&#x6A21;&#x677F;"><a name="&#x7EC4;&#x4EF6;&#x6A21;&#x677F;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x7EC4;&#x4EF6;&#x6A21;&#x677F;</h2>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>my<span class="token operator">-</span>aaa<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>my<span class="token operator">-</span>aaa<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>template id<span class="token operator">=</span><span class="token string">&quot;aaa&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>&#x6807;&#x9898;<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;val in arr&quot;</span><span class="token operator">&gt;</span>
+                <span class="token punctuation">{</span><span class="token punctuation">{</span>val<span class="token punctuation">}</span><span class="token punctuation">}</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> vm<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">:</span><span class="token string">&apos;#box&apos;</span><span class="token punctuation">,</span>
+            components<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                <span class="token string">&apos;my-aaa&apos;</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+                    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                            msg<span class="token punctuation">:</span><span class="token string">&apos;welcome vue&apos;</span><span class="token punctuation">,</span>
+                            arr<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">&apos;apple&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;banana&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;orange&apos;</span><span class="token punctuation">]</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                        <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token operator">=</span><span class="token string">&apos;changed&apos;</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    template<span class="token punctuation">:</span><span class="token string">&apos;#aaa&apos;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/468490-008cea883aa734bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10-vue-js之自定义指令.html" class="navigation navigation-prev " aria-label="Previous page: 10-vue-js之自定义指令">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="12-vue-js组件通信基础.html" class="navigation navigation-next " aria-label="Next page: 12-vue-js组件通信基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"11-初识vue组件","level":"1.12","depth":1,"next":{"title":"12-vue-js组件通信基础","level":"1.13","depth":1,"path":"12-vue-js组件通信基础.md","ref":"12-vue-js组件通信基础.md","articles":[]},"previous":{"title":"10-vue-js之自定义指令","level":"1.11","depth":1,"path":"10-vue-js之自定义指令.md","ref":"10-vue-js之自定义指令.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","anchor-navigation-ex","-sharing","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"pageTop","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"fontsettings":{"theme":"white","family":"serif","size":2},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false}},"theme":"default","author":"neuedu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python_neuedu","language":"zh-hans","links":{"sidebar":{"东软睿道":"http://www.neuedu.com/"}},"gitbook":"3.2.3","description":"http://www.neuedu.com/"},"file":{"path":"11-初识vue组件.md","mtime":"2019-06-06T07:57:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-10T07:37:19.913Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
